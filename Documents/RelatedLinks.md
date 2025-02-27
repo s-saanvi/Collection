@@ -32,3 +32,6 @@
 - [ ] 30. [student-timetable-management-system](https://www.sourcecodester.com/php/12832/student-timetable-management-system.html)
 - [ ] 31. [automatic-timetable-generation-mini-project-report-pdf-free](https://pdfcoffee.com/automatic-timetable-generation-mini-project-report-pdf-free.html)
 - [ ] 32. [schoolTimetabling](https://www.optaplanner.org/learn/useCases/schoolTimetabling.html)
+- [ ] 33. [youtube](https://youtu.be/asstH5H223Y?si=19ta8SvZdn_Vv085)
+- [ ] 34. [youtube](https://youtu.be/Jc-9LtB-EUc?si=KxeWimFoSCEk0DqR)
+- [ ] 35. [Making-a-Class-Schedule-Using-a-Genetic-Algorithm](https://www.codeproject.com/Articles/23111/Making-a-Class-Schedule-Using-a-Genetic-Algorithm)
