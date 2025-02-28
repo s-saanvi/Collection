@@ -23,4 +23,7 @@
 - [ ] 21. evolutionary-timetable-scheduling : [Baksonator/evolutionary-timetable-scheduling](https://github.com/Baksonator/evolutionary-timetable-scheduling.git )
 - [ ] 22. UiTM-Timetable-Generator : [afzafri/UiTM-Timetable-Generator](https://github.com/afzafri/UiTM-Timetable-Generator.git )
 - [ ] 23. Timetable-Generator : [kalidindiamitraja/Timetable-Generator](https://github.com/kalidindiamitraja/Timetable-Generator.git )
+- [ ] 24. Adroit-Scheduler : [Adroit-Abhik/Adroit-Scheduler](https://github.com/Adroit-Abhik/Adroit-Scheduler.git )
+ : []( )
+ : []( )
  : []( )
