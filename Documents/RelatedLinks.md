@@ -36,3 +36,5 @@
 - [ ] 34. [youtube](https://youtu.be/Jc-9LtB-EUc?si=KxeWimFoSCEk0DqR)
 - [ ] 35. [Making-a-Class-Schedule-Using-a-Genetic-Algorithm](https://www.codeproject.com/Articles/23111/Making-a-Class-Schedule-Using-a-Genetic-Algorithm)
 - [ ] 36. [youtube](https://youtu.be/8NrNX_jCkjw?si=feec5NRP2oHMI61u)
+- [ ] 37. [youtube](https://youtu.be/H5f-MIZPPd8?si=vuGAdHxx8zMRC5f5)
+- [ ] 38. [youtube](https://youtu.be/cwDP9m3XeLs?si=vRRzrSs5P9bn8VaZ)
