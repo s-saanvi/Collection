@@ -38,3 +38,4 @@
 - [ ] 36. [youtube](https://youtu.be/8NrNX_jCkjw?si=feec5NRP2oHMI61u)
 - [ ] 37. [youtube](https://youtu.be/H5f-MIZPPd8?si=vuGAdHxx8zMRC5f5)
 - [ ] 38. [youtube](https://youtu.be/cwDP9m3XeLs?si=vRRzrSs5P9bn8VaZ)
+- [ ] 39. [youtube](https://youtu.be/9xmKlF-leWs?si=lJhWiDO2xKIa3G3n)
