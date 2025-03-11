@@ -39,3 +39,6 @@
 - [ ] 37. [youtube](https://youtu.be/H5f-MIZPPd8?si=vuGAdHxx8zMRC5f5)
 - [ ] 38. [youtube](https://youtu.be/cwDP9m3XeLs?si=vRRzrSs5P9bn8VaZ)
 - [ ] 39. [youtube](https://youtu.be/9xmKlF-leWs?si=lJhWiDO2xKIa3G3n)
+- [ ] 40. [github](https://github.com/Avishk12/timelog-ai-scheduler.git)
+- [ ] 41. [github](https://github.com/anshi02/schedule_it.git)
+- [ ] 41. [github](https://github.com/CankayaUniversity/ceng-407-408-2017-2018-project-exam-proctor-and-class-assignment/blob/master/407_ProjectReport.pdf)
