@@ -30,4 +30,7 @@
 - [ ] 28. [github](https://github.com/CankayaUniversity/ceng-407-408-2017-2018-project-exam-proctor-and-class-assignment/blob/master/407_ProjectReport.pdf)
 - [ ] 29. Time_Table_generation : [shekharpalit/Time_Table_generation](https://github.com/shekharpalit/Time_Table_generation.git )  : [research paper](/Documents/Papers/Time-Table-Generation%20sheaker.pdf ) 
 - [ ] 30. dynamicTimeTable : [shridattz/dynamicTimeTable](https://github.com/shridattz/dynamicTimeTable.git ) 
+- [ ] 31. Automatic-Timetable-Generation-System : [PatrickDiallo23/Automatic-Timetable-Generation-System](https://github.com/PatrickDiallo23/Automatic-Timetable-Generation-System.git )
+- [ ] 32. Time-table-scheduler : [pranavkhurana/Time-table-scheduler](https://github.com/pranavkhurana/Time-table-scheduler.git )
+ : []( )
  : []( )
