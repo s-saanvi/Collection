@@ -8,5 +8,5 @@
 6. [A Genetic Algorithm To Solve The Timetable Problem](/Documents/Papers/6.A%20Genetic%20Algorithm%20To%20Solve%20The%20Timetable%20Problem.pdf)
 7. [A local search for the timetabling problem](/Documents/Papers/7.A%20local%20search%20for%20the%20timetabling%20problem.pdf)
 8. [A new approach of Design for the Academic Timetabling problem through Genetic Algorithms](/Documents/Papers/8.A%20new%20approach%20of%20Design%20for%20the%20Academic%20Timetabling%20problem%20through%20Genetic%20Algorithms.pdf)
-9. [A NOVEL GENETIC ALGORITHM TECHNIQUE FOR SOLVING UNIVERSITY COURSE TIMETABLING PROBLEMS]()
-10. []()
+9. [A NOVEL GENETIC ALGORITHM TECHNIQUE FOR SOLVING UNIVERSITY COURSE TIMETABLING PROBLEMS](/Documents/Papers/9.A%20NOVEL%20GENETIC%20ALGORITHM%20TECHNIQUE%20FOR%20SOLVING%20%20UNIVERSITY%20COURSE%20TIMETABLING%20PROBLEMS.pdf)
+10. [Time Table Generator](/Documents/Papers/10.Time%20Table%20Generator.pdf)
