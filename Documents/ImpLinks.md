@@ -35,7 +35,7 @@
 - [ ] 33. Genetic-Algorithm-Timetable-Scheduling: [FiziQaiser/Genetic-Algorithm-Timetable-Scheduling](https://github.com/FiziQaiser/Genetic-Algorithm-Timetable-Scheduling.git )
 - [ ] 34. Timetable : [hayrapetyan-armine/Timetable](https://github.com/hayrapetyan-armine/Timetable.git )
 - [ ] 35. timetable-generator : [olaysco/timetable-generator](https://github.com/olaysco/timetable-generator.git )
-- [ ] 36. : []( )
+- [ ] 36. TimetableGenerationSystem : [abhayshah0305/TimetableGenerationSystem]( https://github.com/abhayshah0305/TimetableGenerationSystem.git)
 - [ ] 37. : []( )
 - [ ] 38. : []( )
 - [ ] 39. : []( )
