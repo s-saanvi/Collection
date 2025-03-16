@@ -50,7 +50,7 @@
 - [ ] 47. [youtube video](https://youtu.be/xEGrgDTqgWM?si=gJCIi46euZ-IEcH2)
 - [ ] 47. [sourceforge.net/projects/unitime](https://sourceforge.net/projects/unitime/)
 - [ ] 47. [seoyeongpark.github.io/projects/courseschedulingcsp](https://seoyeongpark.github.io/projects/courseschedulingcsp/)
-- [ ] 47. []()
+- [ ] 47. [timetablemaster](https://www.timetablemaster.com/guides/school-timetable-complete-guide)
 - [ ] 47. []()
 - [ ] 47. []()
 - [ ] 47. []()
