@@ -1,6 +1,8 @@
 ## Check Papers
-|No.|Title|Checks|
-|---|---|---|
+| No | Title       | Checks         |
+|----|-------------|----------------|
+| 1  | Sample Item | [ ] Unchecked  |
+| 2  | Another One | [x] Checked    |
 | 1. |[Automatic Timetable Generation using Genetic Algorithm](/Documents/Papers/1.Automatic%20Timetable%20Generation%20using%20Genetic%20Algorithm.pdf)| [ ] |
 | 2. |[A Utilization-based Genetic Algorithm for Solving the University Timetabling Problem (UGA)](/Documents/Papers/2.A%20Utilization-based%20Genetic%20Algorithm%20for%20Solving%20the%20University%20Timetabling%20Problem%20(UGA).pdf) | [ ] |
 - [ ] 3. [An informed genetic algorithm for the examination timetabling problem](/Documents/Papers/3.An%20informed%20genetic%20algorithm%20for%20the%20examination%20timetabling%20problem.pdf)
