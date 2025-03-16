@@ -42,3 +42,4 @@
 - [ ] 40. [github](https://github.com/Avishk12/timelog-ai-scheduler.git)
 - [ ] 41. [github](https://github.com/anshi02/schedule_it.git)
 - [ ] 41. [github](https://github.com/CankayaUniversity/ceng-407-408-2017-2018-project-exam-proctor-and-class-assignment/blob/master/407_ProjectReport.pdf)
+- [ ] 42. []()
