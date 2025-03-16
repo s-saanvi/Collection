@@ -1,7 +1,8 @@
 ## Check Papers
-
-- [ ] 1. [Automatic Timetable Generation using Genetic Algorithm](/Documents/Papers/1.Automatic%20Timetable%20Generation%20using%20Genetic%20Algorithm.pdf)
-- [ ] 2. [A Utilization-based Genetic Algorithm for Solving the University Timetabling Problem (UGA)](/Documents/Papers/2.A%20Utilization-based%20Genetic%20Algorithm%20for%20Solving%20the%20University%20Timetabling%20Problem%20(UGA).pdf)
+|checks|title|
+|---|---|
+|- [ ] 1.| [Automatic Timetable Generation using Genetic Algorithm](/Documents/Papers/1.Automatic%20Timetable%20Generation%20using%20Genetic%20Algorithm.pdf)|
+|- [ ] 2.| [A Utilization-based Genetic Algorithm for Solving the University Timetabling Problem (UGA)](/Documents/Papers/2.A%20Utilization-based%20Genetic%20Algorithm%20for%20Solving%20the%20University%20Timetabling%20Problem%20(UGA).pdf)|
 - [ ] 3. [An informed genetic algorithm for the examination timetabling problem](/Documents/Papers/3.An%20informed%20genetic%20algorithm%20for%20the%20examination%20timetabling%20problem.pdf)
 - [ ] 4. [Genetic Algorithm Analysis using the Graph Coloring Method for Solving the University Timetable Problem](/Documents/Papers/4.Genetic%20Algorithm%20Analysis%20using%20the%20Graph%20Coloring%20Method%20for%20Solving%20the%20%20University%20Timetable%20Problem.pdf)
 - [ ] 5. [Automatic Timetable Generator Using Genetic Algorithm](/Documents/Papers/5.Automatic%20Timetable%20Generator%20Using%20Genetic%20%20Algorithm.pdf)
@@ -82,4 +83,3 @@
 - [ ] 80. [Smart Timetable Generator Project report.pdf](/Documents/Papers/80.Smart%20Timetable%20Generator%20Project%20report.pdf)
 - [ ] 81. [Development of a Web-Based Timetabling Software for a Mexican University](/Documents/Papers/81.Development%20of%20a%20Web-Based%20%20Timetabling%20Software%20for%20a%20%20Mexican%20University.pdf)
 [GEMINI GOOGLE](/Documents/Papers/GEMINI%20GOOGLE.pdf)
-
