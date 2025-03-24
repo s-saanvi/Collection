@@ -53,6 +53,11 @@
 - [ ] 52. AutoTimeTable-Generator: [mutayyab01/AutoTimeTable-Generator](https://github.com/mutayyab01/AutoTimeTable-Generator.git )
 - [ ] 53. hust-timetable-scheduler: [king17pvp/hust-timetable-scheduler]( https://github.com/king17pvp/hust-timetable-scheduler.git)
 - [ ] 54. TimetableScheduler : [PROxZIMA/TimetableScheduler](https://github.com/PROxZIMA/TimetableScheduler.git )
-- [ ] 55. : []( )
-- [ ] 56. : []( )
+- [ ] 55. GA_SA_Hybrid_Comparison : [alzahraasalman/GA_SA_Hybrid_Comparison](https://github.com/alzahraasalman/GA_SA_Hybrid_Comparison.git )
+- [ ] 56. Hybrid-Genetic-Algorithm-Simulated-Annealing-for-Presentation-Scheduling : [rayjasson98/Hybrid-Genetic-Algorithm-Simulated-Annealing-for-Presentation-Scheduling](https://github.com/rayjasson98/Hybrid-Genetic-Algorithm-Simulated-Annealing-for-Presentation-Scheduling.git )
+- [ ] 57. : []( )
+- [ ] 58. : []( )
+- [ ] 59. : []( )
+- [ ] 60. : []( )
+- [ ] 61. : []( )
 
