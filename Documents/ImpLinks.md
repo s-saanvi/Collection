@@ -55,9 +55,9 @@
 - [ ] 54. TimetableScheduler : [PROxZIMA/TimetableScheduler](https://github.com/PROxZIMA/TimetableScheduler.git )
 - [ ] 55. GA_SA_Hybrid_Comparison : [alzahraasalman/GA_SA_Hybrid_Comparison](https://github.com/alzahraasalman/GA_SA_Hybrid_Comparison.git )
 - [ ] 56. Hybrid-Genetic-Algorithm-Simulated-Annealing-for-Presentation-Scheduling : [rayjasson98/Hybrid-Genetic-Algorithm-Simulated-Annealing-for-Presentation-Scheduling](https://github.com/rayjasson98/Hybrid-Genetic-Algorithm-Simulated-Annealing-for-Presentation-Scheduling.git )
-- [ ] 57. : []( )
-- [ ] 58. : []( )
-- [ ] 59. : []( )
+- [ ] 57. TimetablingProblem : [camroga/TimetablingProblem](https://github.com/camroga/TimetablingProblem.git )
+- [ ] 58. Time-Table-Scheduling : [krishna1401/Time-Table-Scheduling](https://github.com/krishna1401/Time-Table-Scheduling.git )
+- [ ] 59. TimelyTrigger : [Rishablath14/TimelyTrigger](https://github.com/Rishablath14/TimelyTrigger.git ) backend : [TimelyTriggerBackend ](https://github.com/Rishablath14/TimelyTriggerBackend.git)
 - [ ] 60. : []( )
 - [ ] 61. : []( )
 
