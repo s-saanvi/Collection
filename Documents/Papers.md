@@ -1,5 +1,5 @@
 ## Check Papers
-| No | Title       | Checks &#9745; &#9744;       |
+| No | Title       | Checks &#9745; &#9744; &#9746;      |
 |----|-------------|----------------|
 | 1. |[Automatic Timetable Generation using Genetic Algorithm](/Documents/Papers/1.Automatic%20Timetable%20Generation%20using%20Genetic%20Algorithm.pdf)|&#9744;|
 | 2. |[A Utilization-based Genetic Algorithm for Solving the University Timetabling Problem (UGA)](/Documents/Papers/2.A%20Utilization-based%20Genetic%20Algorithm%20for%20Solving%20the%20University%20Timetabling%20Problem%20(UGA).pdf) |&#9744;|
