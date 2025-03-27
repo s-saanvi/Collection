@@ -90,7 +90,7 @@
 - [ ] 89. timetable-generator: [vigzmv/timetable-generator](https://github.com/vigzmv/timetable-generator.git )
 - [ ] 90. timetable-generator : [shreyavaidya2311/timetable-generator](https://github.com/shreyavaidya2311/timetable-generator.git )
 - [ ] 91. TimetableGenerator: [o-richard/TimetableGenerator]( https://github.com/o-richard/TimetableGenerator.git)
-- [ ] 92. : []( )
+- [ ] 92. timetabling-solver : [framp/timetabling-solver]( https://github.com/framp/timetabling-solver.git)
 - [ ] 93. : []( )
 - [ ] 94. : []( )
 - [ ] 95. : []( )

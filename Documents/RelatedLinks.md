@@ -52,5 +52,5 @@
 - [ ] 49. [seoyeongpark.github.io/projects/courseschedulingcsp](https://seoyeongpark.github.io/projects/courseschedulingcsp/)
 - [ ] 50. [timetablemaster](https://www.timetablemaster.com/guides/school-timetable-complete-guide)
 - [ ] 51. [Project-Report-on-Time-Table-Generator-1](https://www.scribd.com/doc/56810488/Project-Report-on-Time-Table-Generator-1)
-- [ ] 52. []()
+- [ ] 52. [A_Genetic_Algorithm_To_Solve_The_Timetable_Problem](https://www.researchgate.net/publication/2253354_A_Genetic_Algorithm_To_Solve_The_Timetable_Problem)
 - [ ] 53. []()
