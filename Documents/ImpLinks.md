@@ -91,7 +91,7 @@
 - [ ] 90. timetable-generator : [shreyavaidya2311/timetable-generator](https://github.com/shreyavaidya2311/timetable-generator.git )
 - [ ] 91. TimetableGenerator: [o-richard/TimetableGenerator]( https://github.com/o-richard/TimetableGenerator.git)
 - [ ] 92. timetabling-solver : [framp/timetabling-solver]( https://github.com/framp/timetabling-solver.git)
-- [ ] 93. : []( )
+- [ ] 93. Timetable-generator : [Paulraj916/Timetable-generator]( https://github.com/Paulraj916/Timetable-generator.git) Huggingface : [HuggingFace sys link](https://huggingface.co/spaces/Paulraj916/timetable_generator)
 - [ ] 94. : []( )
 - [ ] 95. : []( )
 - [ ] 96. : []( )
