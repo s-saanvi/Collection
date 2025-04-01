@@ -53,4 +53,4 @@
 - [ ] 50. [timetablemaster](https://www.timetablemaster.com/guides/school-timetable-complete-guide)
 - [ ] 51. [Project-Report-on-Time-Table-Generator-1](https://www.scribd.com/doc/56810488/Project-Report-on-Time-Table-Generator-1)
 - [ ] 52. [A_Genetic_Algorithm_To_Solve_The_Timetable_Problem](https://www.researchgate.net/publication/2253354_A_Genetic_Algorithm_To_Solve_The_Timetable_Problem)
-- [ ] 53. []()
+- [ ] 53. [code-projects.org](https://code-projects.org/class-and-exam-timetable-management-system-in-php-with-source-code/#google_vignette)
