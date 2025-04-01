@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Timetable Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .timetable-cell {
+            min-height: 80px;
+            transition: all 0.3s ease;
+            cursor: move;
+        }
+        .timetable-cell.dragging {
+            opacity: 0.5;
+            transform: scale(0.95);
+        }
+        .timetable-cell.drop-target {
+            background-color: rgba(99, 102, 241, 0.2);
+            border: 2px dashed #6366f1;
+        }
+        .course-color-1 { background-color: #FFD1DC; }
+        .course-color-2 { background-color: #C4E3F3; }
+        .course-color-3 { background-color: #D8BFD8; }
+        .course-color-4 { background-color: #FFDAB9; }
+        .course-color-5 { background-color: #E6E6FA; }
+        .course-color-6 { background-color: #98FB98; }
+        .course-color-7 { background-color: #FFA07A; }
+        .course-color-8 { background-color: #AFEEEE; }
+        .animate-pop {
+            animation: popIn 0.5s ease-out;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            80% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .constraint-badge {
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .semester-tab {
+            transition: all 0.3s ease;
+        }
+        .semester-tab.active {
+            background-color: #6366f1;
+            color: white;
+        }
+        .course-teacher-mapping-item {
+            transition: all 0.2s ease;
+        }
+        .course-teacher-mapping-item:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-indigo-700 mb-2">
+                <i class="fas fa-calendar-alt mr-2"></i>College Timetable Generator
+            </h1>
+            <p class="text-gray-600">Using Genetic Algorithm for optimal scheduling</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Input Section -->
+            <div class="lg:col-span-1 bg-white rounded-xl shadow-md p-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-cog mr-2 text-indigo-500"></i> Configuration
+                </h2>
+                
+                <!-- Semesters/Classes -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3 flex items-center">
+                        <i class="fas fa-layer-group mr-2 text-indigo-500"></i> Semesters/Classes
+                    </h3>
+                    <div class="flex mb-2">
+                        <input type="text" id="semesterName" placeholder="Semester/Class name" class="flex-1 px-3 py-2 border rounded-l focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                        <button onclick="addSemester()" class="bg-indigo-500 text-white px-4 py-2 rounded-r hover:bg-indigo-600 transition">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div id="semestersList" class="flex flex-wrap gap-2 mb-3"></div>
+                </div>
+                
+                <!-- Courses -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3 flex items-center">
+                        <i class="fas fa-graduation-cap mr-2 text-blue-500"></i> Courses
+                    </h3>
+                    <div class="flex mb-2">
+                        <input type="text" id="courseName" placeholder="Course name" class="flex-1 px-3 py-2 border rounded-l focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                        <button onclick="addCourse()" class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 transition">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div id="coursesList" class="max-h-40 overflow-y-auto border rounded p-2"></div>
+                </div>
+
+                <!-- Teachers -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3 flex items-center">
+                        <i class="fas fa-chalkboard-teacher mr-2 text-green-500"></i> Teachers
+                    </h3>
+                    <div class="flex mb-2">
+                        <input type="text" id="teacherName" placeholder="Teacher name" class="flex-1 px-3 py-2 border rounded-l focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                        <button onclick="addTeacher()" class="bg-green-500 text-white px-4 py-2 rounded-r hover:bg-green-600 transition">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div id="teachersList" class="max-h-40 overflow-y-auto border rounded p-2"></div>
+                </div>
+
+                <!-- Rooms -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3 flex items-center">
+                        <i class="fas fa-door-open mr-2 text-purple-500"></i> Rooms
+                    </h3>
+                    <div class="flex mb-2">
+                        <input type="text" id="roomName" placeholder="Room name" class="flex-1 px-3 py-2 border rounded-l focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                        <button onclick="addRoom()" class="bg-purple-500 text-white px-4 py-2 rounded-r hover:bg-purple-600 transition">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div id="roomsList" class="max-h-40 overflow-y-auto border rounded p-2"></div>
+                </div>
+
+                <!-- Course-Teacher Mapping -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3 flex items-center">
+                        <i class="fas fa-link mr-2 text-yellow-500"></i> Course-Teacher Mapping
+                    </h3>
+                    <div class="mb-3">
+                        <div class="grid grid-cols-2 gap-2 mb-2">
+                            <select id="mappingCourse" class="px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                                <option value="">Select Course</option>
+                            </select>
+                            <select id="mappingTeacher" class="px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                                <option value="">Select Teacher</option>
+                            </select>
+                        </div>
+                        <button onclick="addCourseTeacherMapping()" class="w-full bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 transition">
+                            <i class="fas fa-link mr-1"></i> Map Course to Teacher
+                        </button>
+                    </div>
+                    <div id="courseTeacherMappingList" class="max-h-40 overflow-y-auto border rounded p-2"></div>
+                </div>
+
+                <!-- Time Slots -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3 flex items-center">
+                        <i class="fas fa-clock mr-2 text-yellow-500"></i> Time Slots
+                    </h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Days</label>
+                            <input type="number" id="numDays" min="1" max="7" value="5" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Periods per day</label>
+                            <input type="number" id="numPeriods" min="1" max="10" value="6" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Constraints -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-2 text-red-500"></i> Constraints
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="teacherConflict" class="mr-2" checked>
+                            <label for="teacherConflict" class="text-sm text-gray-700">Avoid teacher conflicts</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="roomConflict" class="mr-2" checked>
+                            <label for="roomConflict" class="text-sm text-gray-700">Avoid room conflicts</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="courseConsecutive" class="mr-2">
+                            <label for="courseConsecutive" class="text-sm text-gray-700">Prefer consecutive periods</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GA Parameters -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3 flex items-center">
+                        <i class="fas fa-dna mr-2 text-pink-500"></i> GA Parameters
+                    </h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Population</label>
+                            <input type="number" id="populationSize" min="10" max="500" value="100" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Generations</label>
+                            <input type="number" id="numGenerations" min="10" max="1000" value="200" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Mutation Rate</label>
+                            <input type="number" id="mutationRate" min="0" max="1" step="0.01" value="0.1" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Elitism %</label>
+                            <input type="number" id="elitismPercent" min="0" max="50" value="10" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="generateTimetable()" class="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-indigo-700 transition flex items-center justify-center">
+                    <i class="fas fa-play-circle mr-2"></i> Generate Timetable
+                </button>
+            </div>
+
+            <!-- Timetable Section -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-table mr-2 text-indigo-500"></i> Generated Timetable
+                    </h2>
+                    
+                    <!-- Semester Tabs -->
+                    <div id="semesterTabs" class="flex flex-wrap gap-2 mb-4">
+                        <!-- Tabs will be generated here -->
+                    </div>
+                    
+                    <div id="timetableContainer" class="overflow-x-auto">
+                        <!-- Timetable will be generated here -->
+                        <div class="text-center text-gray-500 py-12">
+                            <i class="fas fa-calendar-plus text-4xl mb-3"></i>
+                            <p>Configure your inputs and generate a timetable</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-chart-line mr-2 text-indigo-500"></i> Algorithm Progress
+                    </h2>
+                    
+                    <div id="progressContainer">
+                        <div class="text-center text-gray-500 py-8">
+                            <i class="fas fa-chart-pie text-4xl mb-3"></i>
+                            <p>Generation statistics will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data storage
+        let semesters = [];
+        let courses = [];
+        let teachers = [];
+        let rooms = [];
+        let courseTeacherMappings = [];
+        let constraints = {
+            teacherConflict: true,
+            roomConflict: true,
+            courseConsecutive: false
+        };
+        let gaParams = {
+            populationSize: 100,
+            numGenerations: 200,
+            mutationRate: 0.1,
+            elitismPercent: 10
+        };
+        let timetables = {};
+        let generationStats = [];
+        let currentSemesterView = null;
+        
+        // DOM elements
+        const semestersList = document.getElementById('semestersList');
+        const coursesList = document.getElementById('coursesList');
+        const teachersList = document.getElementById('teachersList');
+        const roomsList = document.getElementById('roomsList');
+        const mappingCourseSelect = document.getElementById('mappingCourse');
+        const mappingTeacherSelect = document.getElementById('mappingTeacher');
+        const courseTeacherMappingList = document.getElementById('courseTeacherMappingList');
+        const semesterTabs = document.getElementById('semesterTabs');
+        const timetableContainer = document.getElementById('timetableContainer');
+        const progressContainer = document.getElementById('progressContainer');
+
+        // Initialize drag and drop
+        let draggedItem = null;
+        let dropTarget = null;
+
+        // Add semester to list
+        function addSemester() {
+            const semesterName = document.getElementById('semesterName').value.trim();
+            if (semesterName && !semesters.includes(semesterName)) {
+                semesters.push(semesterName);
+                updateSemestersList();
+                document.getElementById('semesterName').value = '';
+            }
+        }
+
+        // Update semesters list display
+        function updateSemestersList() {
+            semestersList.innerHTML = '';
+            semesters.forEach((semester, index) => {
+                const div = document.createElement('div');
+                div.className = 'bg-gray-100 px-3 py-1 rounded-full text-sm flex items-center';
+                div.innerHTML = `
+                    <span>${semester}</span>
+                    <button onclick="removeItem('semesters', ${index})" class="ml-1 text-gray-500 hover:text-red-500">
+                        <i class="fas fa-times text-xs"></i>
+                    </button>
+                `;
+                semestersList.appendChild(div);
+            });
+            
+            // Initialize timetable for each semester
+            semesters.forEach(semester => {
+                if (!timetables[semester]) {
+                    timetables[semester] = [];
+                }
+            });
+            
+            updateSemesterTabs();
+        }
+
+        // Update semester tabs
+        function updateSemesterTabs() {
+            semesterTabs.innerHTML = '';
+            semesters.forEach((semester, index) => {
+                const button = document.createElement('button');
+                button.className = `semester-tab px-4 py-2 rounded-full text-sm ${currentSemesterView === semester || (index === 0 && currentSemesterView === null) ? 'active' : 'bg-gray-100'}`;
+                button.textContent = semester;
+                button.onclick = () => {
+                    currentSemesterView = semester;
+                    updateSemesterTabs();
+                    if (timetables[semester] && timetables[semester].length > 0) {
+                        const numDays = parseInt(document.getElementById('numDays').value);
+                        const numPeriods = parseInt(document.getElementById('numPeriods').value);
+                        displayTimetable(timetables[semester], numDays, numPeriods, semester);
+                    }
+                };
+                semesterTabs.appendChild(button);
+            });
+            
+            if (semesters.length > 0 && !currentSemesterView) {
+                currentSemesterView = semesters[0];
+            }
+        }
+
+        // Add course to list
+        function addCourse() {
+            const courseName = document.getElementById('courseName').value.trim();
+            if (courseName && !courses.includes(courseName)) {
+                courses.push(courseName);
+                updateCoursesList();
+                document.getElementById('courseName').value = '';
+                
+                // Add to course select in mapping
+                updateCourseTeacherMappingSelects();
+            }
+        }
+
+        // Update courses list display
+        function updateCoursesList() {
+            coursesList.innerHTML = '';
+            courses.forEach((course, index) => {
+                const div = document.createElement('div');
+                div.className = 'flex justify-between items-center p-2 border-b';
+                div.innerHTML = `
+                    <span class="course-color-${(index % 8) + 1} px-2 py-1 rounded-full text-sm font-medium">${course}</span>
+                    <button onclick="removeItem('courses', ${index})" class="text-red-500 hover:text-red-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                coursesList.appendChild(div);
+            });
+        }
+
+        // Add teacher to list
+        function addTeacher() {
+            const teacherName = document.getElementById('teacherName').value.trim();
+            if (teacherName && !teachers.includes(teacherName)) {
+                teachers.push(teacherName);
+                updateTeachersList();
+                document.getElementById('teacherName').value = '';
+                
+                // Add to teacher select in mapping
+                updateCourseTeacherMappingSelects();
+            }
+        }
+
+        // Update teachers list display
+        function updateTeachersList() {
+            teachersList.innerHTML = '';
+            teachers.forEach((teacher, index) => {
+                const div = document.createElement('div');
+                div.className = 'flex justify-between items-center p-2 border-b';
+                div.innerHTML = `
+                    <span class="text-sm font-medium">${teacher}</span>
+                    <button onclick="removeItem('teachers', ${index})" class="text-red-500 hover:text-red-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                teachersList.appendChild(div);
+            });
+        }
+
+        // Add room to list
+        function addRoom() {
+            const roomName = document.getElementById('roomName').value.trim();
+            if (roomName && !rooms.includes(roomName)) {
+                rooms.push(roomName);
+                updateRoomsList();
+                document.getElementById('roomName').value = '';
+            }
+        }
+
+        // Update rooms list display
+        function updateRoomsList() {
+            roomsList.innerHTML = '';
+            rooms.forEach((room, index) => {
+                const div = document.createElement('div');
+                div.className = 'flex justify-between items-center p-2 border-b';
+                div.innerHTML = `
+                    <span class="text-sm font-medium">${room}</span>
+                    <button onclick="removeItem('rooms', ${index})" class="text-red-500 hover:text-red-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                roomsList.appendChild(div);
+            });
+        }
+
+        // Update course-teacher mapping selects
+        function updateCourseTeacherMappingSelects() {
+            mappingCourseSelect.innerHTML = '<option value="">Select Course</option>';
+            courses.forEach((course, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = course;
+                mappingCourseSelect.appendChild(option);
+            });
+            
+            mappingTeacherSelect.innerHTML = '<option value="">Select Teacher</option>';
+            teachers.forEach((teacher, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = teacher;
+                mappingTeacherSelect.appendChild(option);
+            });
+        }
+
+        // Add course-teacher mapping
+        function addCourseTeacherMapping() {
+            const courseIndex = parseInt(mappingCourseSelect.value);
+            const teacherIndex = parseInt(mappingTeacherSelect.value);
+            
+            if (isNaN(courseIndex) || isNaN(teacherIndex)) {
+                alert('Please select both a course and a teacher');
+                return;
+            }
+            
+            const course = courses[courseIndex];
+            const teacher = teachers[teacherIndex];
+            
+            // Check if mapping already exists
+            const existingMapping = courseTeacherMappings.find(m => m.courseIndex === courseIndex);
+            if (existingMapping) {
+                alert('This course is already mapped to a teacher');
+                return;
+            }
+            
+            courseTeacherMappings.push({
+                courseIndex: courseIndex,
+                teacherIndex: teacherIndex
+            });
+            
+            updateCourseTeacherMappingList();
+        }
+
+        // Update course-teacher mapping list
+        function updateCourseTeacherMappingList() {
+            courseTeacherMappingList.innerHTML = '';
+            courseTeacherMappings.forEach((mapping, index) => {
+                const course = courses[mapping.courseIndex];
+                const teacher = teachers[mapping.teacherIndex];
+                
+                const div = document.createElement('div');
+                div.className = 'flex justify-between items-center p-2 border-b course-teacher-mapping-item';
+                div.innerHTML = `
+                    <div>
+                        <span class="course-color-${(mapping.courseIndex % 8) + 1} px-2 py-1 rounded-full text-sm font-medium">${course}</span>
+                        <span class="mx-2">→</span>
+                        <span class="text-sm font-medium">${teacher}</span>
+                    </div>
+                    <button onclick="removeItem('courseTeacherMappings', ${index})" class="text-red-500 hover:text-red-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                courseTeacherMappingList.appendChild(div);
+            });
+        }
+
+        // Remove item from list
+        function removeItem(listType, index) {
+            if (listType === 'semesters') {
+                const semester = semesters[index];
+                delete timetables[semester];
+                semesters.splice(index, 1);
+                updateSemestersList();
+            } else if (listType === 'courses') {
+                courses.splice(index, 1);
+                updateCoursesList();
+                // Remove any mappings involving this course
+                courseTeacherMappings = courseTeacherMappings.filter(m => m.courseIndex !== index);
+                // Adjust indexes for courses after the removed one
+                courseTeacherMappings = courseTeacherMappings.map(m => {
+                    if (m.courseIndex > index) {
+                        return { ...m, courseIndex: m.courseIndex - 1 };
+                    }
+                    return m;
+                });
+                updateCourseTeacherMappingList();
+                updateCourseTeacherMappingSelects();
+            } else if (listType === 'teachers') {
+                teachers.splice(index, 1);
+                updateTeachersList();
+                // Remove any mappings involving this teacher
+                courseTeacherMappings = courseTeacherMappings.filter(m => m.teacherIndex !== index);
+                // Adjust indexes for teachers after the removed one
+                courseTeacherMappings = courseTeacherMappings.map(m => {
+                    if (m.teacherIndex > index) {
+                        return { ...m, teacherIndex: m.teacherIndex - 1 };
+                    }
+                    return m;
+                });
+                updateCourseTeacherMappingList();
+                updateCourseTeacherMappingSelects();
+            } else if (listType === 'rooms') {
+                rooms.splice(index, 1);
+                updateRoomsList();
+            } else if (listType === 'courseTeacherMappings') {
+                courseTeacherMappings.splice(index, 1);
+                updateCourseTeacherMappingList();
+            }
+        }
+
+        // Generate timetable using genetic algorithm
+        function generateTimetable() {
+            // Validate inputs
+            if (semesters.length === 0) {
+                alert('Please add at least one semester/class');
+                return;
+            }
+            
+            if (courses.length === 0 || teachers.length === 0 || rooms.length === 0) {
+                alert('Please add at least one course, teacher, and room');
+                return;
+            }
+            
+            if (courseTeacherMappings.length === 0) {
+                alert('Please map at least one course to a teacher');
+                return;
+            }
+
+            // Get parameters
+            const numDays = parseInt(document.getElementById('numDays').value);
+            const numPeriods = parseInt(document.getElementById('numPeriods').value);
+            
+            constraints.teacherConflict = document.getElementById('teacherConflict').checked;
+            constraints.roomConflict = document.getElementById('roomConflict').checked;
+            constraints.courseConsecutive = document.getElementById('courseConsecutive').checked;
+            
+            gaParams.populationSize = parseInt(document.getElementById('populationSize').value);
+            gaParams.numGenerations = parseInt(document.getElementById('numGenerations').value);
+            gaParams.mutationRate = parseFloat(document.getElementById('mutationRate').value);
+            gaParams.elitismPercent = parseInt(document.getElementById('elitismPercent').value);
+
+            // Show loading state
+            timetableContainer.innerHTML = `
+                <div class="text-center py-12">
+                    <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500 mb-4"></div>
+                    <p>Generating timetable using genetic algorithm...</p>
+                </div>
+            `;
+
+            progressContainer.innerHTML = `
+                <div class="text-center py-8">
+                    <div class="inline-block animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-indigo-500 mb-3"></div>
+                    <p>Running genetic algorithm...</p>
+                </div>
+            `;
+
+            // Generate timetables for all semesters
+            semesters.forEach(semester => {
+                // Simulate GA process (in a real app, this would be the actual algorithm)
+                setTimeout(() => {
+                    timetables[semester] = runGeneticAlgorithm(numDays, numPeriods, semester);
+                    
+                    // Display the first semester's timetable by default
+                    if (currentSemesterView === semester || (!currentSemesterView && semester === semesters[0])) {
+                        displayTimetable(timetables[semester], numDays, numPeriods, semester);
+                    }
+                }, 500);
+            });
+        }
+
+        // Simulated genetic algorithm
+        function runGeneticAlgorithm(numDays, numPeriods, semester) {
+            generationStats = [];
+            let timetable = [];
+            
+            // Generate random timetable (in a real app, this would be a population)
+            timetable = generateRandomTimetable(numDays, numPeriods, semester);
+            
+            // Simulate generations
+            for (let gen = 0; gen < gaParams.numGenerations; gen++) {
+                // Simulate fitness calculation
+                const fitness = calculateFitness(timetable);
+                
+                // Store stats for visualization
+                generationStats.push({
+                    generation: gen + 1,
+                    fitness: fitness,
+                    conflicts: Math.floor(Math.random() * 10) // Simulated conflicts
+                });
+                
+                // Simulate improvement over generations
+                if (gen > gaParams.numGenerations / 2) {
+                    // "Improve" the timetable in later generations
+                    timetable = improveTimetable(timetable, semester);
+                }
+                
+                // Update progress every few generations for performance
+                if (gen % 10 === 0 || gen === gaParams.numGenerations - 1) {
+                    updateProgress(gen);
+                }
+            }
+            
+            return timetable;
+        }
+
+        // Generate a random timetable
+        function generateRandomTimetable(numDays, numPeriods, semester) {
+            const timetable = [];
+            const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            
+            // Get courses mapped for this semester (in real system, this would be semester-specific)
+            const availableMappings = [...courseTeacherMappings];
+            
+            for (let day = 0; day < numDays; day++) {
+                const daySchedule = [];
+                for (let period = 0; period < numPeriods; period++) {
+                    // If no mappings left, create empty slot
+                    if (availableMappings.length === 0) {
+                        daySchedule.push({
+                            course: "Free",
+                            teacher: "",
+                            room: "",
+                            courseIndex: -1,
+                            dayName: dayNames[day],
+                            period: period
+                        });
+                        continue;
+                    }
+                    
+                    // Randomly select a course-teacher mapping
+                    const mappingIndex = Math.floor(Math.random() * availableMappings.length);
+                    const mapping = availableMappings[mappingIndex];
+                    
+                    // Remove this mapping so we don't reuse it (simplification for demo)
+                    availableMappings.splice(mappingIndex, 1);
+                    
+                    // Randomly select room
+                    const roomIndex = Math.floor(Math.random() * rooms.length);
+                    
+                    daySchedule.push({
+                        course: courses[mapping.courseIndex],
+                        teacher: teachers[mapping.teacherIndex],
+                        room: rooms[roomIndex],
+                        courseIndex: mapping.courseIndex,
+                        dayName: dayNames[day],
+                        period: period
+                    });
+                }
+                timetable.push(daySchedule);
+            }
+            
+            return timetable;
+        }
+
+        // Simulated fitness function
+        function calculateFitness(timetable) {
+            // Base fitness (higher is better)
+            let fitness = 100;
+            
+            // Penalize teacher conflicts if constraint is enabled
+            if (constraints.teacherConflict) {
+                const teacherConflicts = countTeacherConflicts(timetable);
+                fitness -= teacherConflicts * 5;
+            }
+            
+            // Penalize room conflicts if constraint is enabled
+            if (constraints.roomConflict) {
+                const roomConflicts = countRoomConflicts(timetable);
+                fitness -= roomConflicts * 5;
+            }
+            
+            // Reward consecutive courses if constraint is enabled
+            if (constraints.courseConsecutive) {
+                const consecutiveScore = countConsecutiveCourses(timetable);
+                fitness += consecutiveScore * 2;
+            }
+            
+            return Math.max(0, fitness);
+        }
+
+        // Count teacher conflicts
+        function countTeacherConflicts(timetable) {
+            let conflicts = 0;
+            const teacherAssignments = {};
+            
+            timetable.forEach(day => {
+                day.forEach(slot => {
+                    if (!slot.teacher) return; // Skip free periods
+                    
+                    if (!teacherAssignments[slot.teacher]) {
+                        teacherAssignments[slot.teacher] = new Set();
+                    }
+                    
+                    const key = `${slot.dayName}-${slot.period}`;
+                    if (teacherAssignments[slot.teacher].has(key)) {
+                        conflicts++;
+                    } else {
+                        teacherAssignments[slot.teacher].add(key);
+                    }
+                });
+            });
+            
+            return conflicts;
+        }
+
+        // Count room conflicts
+        function countRoomConflicts(timetable) {
+            let conflicts = 0;
+            const roomAssignments = {};
+            
+            timetable.forEach(day => {
+                day.forEach(slot => {
+                    if (!slot.room) return; // Skip free periods
+                    
+                    if (!roomAssignments[slot.room]) {
+                        roomAssignments[slot.room] = new Set();
+                    }
+                    
+                    const key = `${slot.dayName}-${slot.period}`;
+                    if (roomAssignments[slot.room].has(key)) {
+                        conflicts++;
+                    } else {
+                        roomAssignments[slot.room].add(key);
+                    }
+                });
+            });
+            
+            return conflicts;
+        }
+
+        // Count consecutive courses
+        function countConsecutiveCourses(timetable) {
+            let score = 0;
+            
+            timetable.forEach(day => {
+                for (let i = 1; i < day.length; i++) {
+                    if (day[i].course === day[i-1].course && day[i].course !== "Free") {
+                        score++;
+                    }
+                }
+            });
+            
+            return score;
+        }
+
+        // Simulated timetable improvement
+        function improveTimetable(timetable, semester) {
+            // Make a copy
+            const newTimetable = JSON.parse(JSON.stringify(timetable));
+            
+            // Randomly swap some slots to "improve" the timetable
+            for (let i = 0; i < 3; i++) {
+                const day1 = Math.floor(Math.random() * newTimetable.length);
+                const period1 = Math.floor(Math.random() * newTimetable[0].length);
+                
+                const day2 = Math.floor(Math.random() * newTimetable.length);
+                const period2 = Math.floor(Math.random() * newTimetable[0].length);
+                
+                // Swap slots
+                const temp = newTimetable[day1][period1];
+                newTimetable[day1][period1] = newTimetable[day2][period2];
+                newTimetable[day2][period2] = temp;
+            }
+            
+            return newTimetable;
+        }
+
+        // Display the generated timetable
+        function displayTimetable(timetable, numDays, numPeriods, semester) {
+            const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            
+            let html = `
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border">
+                        <thead>
+                            <tr>
+                                <th class="border p-2 bg-gray-100">Time/Day</th>
+            `;
+            
+            // Add day headers
+            for (let day = 0; day < numDays; day++) {
+                html += `<th class="border p-2 bg-gray-100">${dayNames[day]}</th>`;
+            }
+            
+            html += `</tr></thead><tbody>`;
+            
+            // Add periods
+            for (let period = 0; period < numPeriods; period++) {
+                html += `<tr><td class="border p-2 bg-gray-100 font-medium">Period ${period + 1}</td>`;
+                
+                for (let day = 0; day < numDays; day++) {
+                    const slot = timetable[day][period];
+                    const isEmpty = slot.course === "Free";
+                    
+                    html += `
+                        <td class="border p-2 timetable-cell ${isEmpty ? 'bg-gray-50' : 'course-color-' + ((slot.courseIndex % 8) + 1)} animate-pop"
+                            data-day="${day}" data-period="${period}"
+                            draggable="true"
+                            ondragstart="handleDragStart(event)"
+                            ondragover="handleDragOver(event)"
+                            ondragleave="handleDragLeave(event)"
+                            ondrop="handleDrop(event)"
+                            ondragend="handleDragEnd(event)">
+                            ${isEmpty ? `
+                                <div class="text-center text-gray-400">Free</div>
+                            ` : `
+                                <div class="font-medium">${slot.course}</div>
+                                <div class="text-sm">${slot.teacher}</div>
+                                <div class="text-xs text-gray-600">${slot.room}</div>
+                            `}
+                        </td>
+                    `;
+                }
+                
+                html += `</tr>`;
+            }
+            
+            html += `</tbody></table></div>`;
+            
+            // Add constraints summary
+            const teacherConflicts = countTeacherConflicts(timetable);
+            const roomConflicts = countRoomConflicts(timetable);
+            const consecutiveScore = countConsecutiveCourses(timetable);
+            
+            html += `
+                <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="font-medium text-lg mb-2">Schedule Summary for ${semester}</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="constraint-badge px-3 py-1 rounded-full text-sm ${teacherConflicts === 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
+                            Teacher Conflicts: ${teacherConflicts}
+                        </span>
+                        <span class="constraint-badge px-3 py-1 rounded-full text-sm ${roomConflicts === 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
+                            Room Conflicts: ${roomConflicts}
+                        </span>
+                        <span class="constraint-badge px-3 py-1 rounded-full text-sm ${consecutiveScore > 0 ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 text-gray-800'}">
+                            Consecutive Courses: ${consecutiveScore}
+                        </span>
+                    </div>
+                </div>
+            `;
+            
+            timetableContainer.innerHTML = html;
+            initDragAndDrop();
+        }
+
+        // Drag and drop handlers
+        function handleDragStart(e) {
+            draggedItem = e.target;
+            e.target.classList.add('dragging');
+            e.dataTransfer.setData('text/plain', ''); // Required for Firefox
+            e.dataTransfer.effectAllowed = 'move';
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            if (draggedItem && e.target.classList.contains('timetable-cell')) {
+                e.target.classList.add('drop-target');
+            }
+            e.dataTransfer.dropEffect = 'move';
+        }
+
+        function handleDragLeave(e) {
+            e.target.classList.remove('drop-target');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            e.target.classList.remove('drop-target');
+            
+            if (draggedItem && e.target.classList.contains('timetable-cell') && draggedItem !== e.target) {
+                // Get the slot positions
+                const fromDay = parseInt(draggedItem.getAttribute('data-day'));
+                const fromPeriod = parseInt(draggedItem.getAttribute('data-period'));
+                const toDay = parseInt(e.target.getAttribute('data-day'));
+                const toPeriod = parseInt(e.target.getAttribute('data-period'));
+                
+                // Swap the slots in the timetable
+                const temp = timetables[currentSemesterView][fromDay][fromPeriod];
+                timetables[currentSemesterView][fromDay][fromPeriod] = timetables[currentSemesterView][toDay][toPeriod];
+                timetables[currentSemesterView][toDay][toPeriod] = temp;
+                
+                // Re-display the timetable
+                const numDays = parseInt(document.getElementById('numDays').value);
+                const numPeriods = parseInt(document.getElementById('numPeriods').value);
+                displayTimetable(timetables[currentSemesterView], numDays, numPeriods, currentSemesterView);
+            }
+        }
+
+        function handleDragEnd(e) {
+            e.target.classList.remove('dragging');
+            draggedItem = null;
+        }
+
+        function initDragAndDrop() {
+            const cells = document.querySelectorAll('.timetable-cell');
+            cells.forEach(cell => {
+                cell.addEventListener('dragstart', handleDragStart);
+                cell.addEventListener('dragover', handleDragOver);
+                cell.addEventListener('dragleave', handleDragLeave);
+                cell.addEventListener('drop', handleDrop);
+                cell.addEventListener('dragend', handleDragEnd);
+            });
+        }
+
+        // Update progress visualization
+        function updateProgress(currentGen, isFinal = false) {
+            if (generationStats.length === 0) return;
+            
+            const currentStats = generationStats[generationStats.length - 1];
+            
+            // Create chart-like visualization
+            let html = `
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-medium">Generation ${currentGen + 1} of ${gaParams.numGenerations}</h3>
+                        <span class="px-2 py-1 rounded ${currentStats.fitness > 80 ? 'bg-green-100 text-green-800' : currentStats.fitness > 50 ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800'}">
+                            Fitness: ${currentStats.fitness.toFixed(1)}
+                        </span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-4">
+                        <div class="bg-indigo-600 h-4 rounded-full" style="width: ${Math.min(100, currentStats.fitness)}%"></div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-white p-4 rounded-lg border">
+                        <h4 class="font-medium mb-2">Fitness Progress</h4>
+                        <div class="h-40">
+                            <div class="relative h-full w-full">
+                                ${generateSparkline(generationStats.map(stat => stat.fitness), 'indigo')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border">
+                        <h4 class="font-medium mb-2">Conflicts</h4>
+                        <div class="h-40">
+                            <div class="relative h-full w-full">
+                                ${generateSparkline(generationStats.map(stat => stat.conflicts), 'red')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            if (isFinal) {
+                html += `
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+                        <i class="fas fa-check-circle text-green-500 text-3xl mb-2"></i>
+                        <h3 class="font-medium text-green-800">Timetable Generated Successfully!</h3>
+                        <p class="text-sm text-green-600 mt-1">Final fitness score: ${currentStats.fitness.toFixed(1)}</p>
+                    </div>
+                `;
+            }
+            
+            progressContainer.innerHTML = html;
+        }
+
+        // Generate simple SVG sparkline
+        function generateSparkline(data, color) {
+            if (data.length < 2) return '';
+            
+            const maxVal = Math.max(...data);
+            const minVal = Math.min(...data);
+            const range = maxVal - minVal || 1;
+            const width = 300;
+            const height = 100;
+            const step = width / (data.length - 1);
+            
+            let path = `M 0 ${height - ((data[0] - minVal) / range * height)}`;
+            
+            for (let i = 1; i < data.length; i++) {
+                path += ` L ${i * step} ${height - ((data[i] - minVal) / range * height)}`;
+            }
+            
+            return `
+                <svg viewBox="0 0 ${width} ${height}" class="w-full h-full">
+                    <path d="${path}" stroke="${getColorHex(color)}" fill="none" stroke-width="2" />
+                    ${data.length > 10 ? '' : `
+                        ${data.map((val, i) => `
+                            <circle cx="${i * step}" cy="${height - ((val - minVal) / range * height)}" r="2" fill="${getColorHex(color)}" />
+                        `).join('')}
+                    `}
+                </svg>
+            `;
+        }
+
+        // Get color hex code
+        function getColorHex(color) {
+            const colors = {
+                indigo: '#6366F1',
+                red: '#EF4444',
+                green: '#10B981',
+                blue: '#3B82F6',
+                yellow: '#F59E0B'
+            };
+            return colors[color] || '#000';
+        }
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCourseTeacherMappingSelects();
+        });
+    </script>
+</body>
+</html>
