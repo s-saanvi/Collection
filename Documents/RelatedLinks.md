@@ -1,6 +1,6 @@
 # Related Links
 
-- [ ] 1. [geeksforgeeks](https://www.geeksforgeeks.org/timetable-generating-system-uml-diagram/)
+- [x] 1. [geeksforgeeks](https://www.geeksforgeeks.org/timetable-generating-system-uml-diagram/)
 - [ ] 2. [nileshparab42/College-Timetable-Generator](https://github.com/nileshparab42/College-Timetable-Generator)
 - [ ] 3. [scribd.com](https://www.scribd.com/document/436226179/Time-Table-Managment-docx)
 - [ ] 4. [NamanDeept/Time-table-management-system](https://github.com/NamanDeept/Time-table-management-system)
