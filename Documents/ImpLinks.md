@@ -120,7 +120,7 @@
 - [ ] 119. ASGO-Automatic-Online-Timetable-Generator- : [AakashGujar/ASGO-Automatic-Online-Timetable-Generator-]( https://github.com/AakashGujar/ASGO-Automatic-Online-Timetable-Generator-.git)
 - [ ] 120. Automatic-Timetable-Generator-using-ML : [KiranbirSinghVirk/Automatic-Timetable-Generator-using-ML]( https://github.com/KiranbirSinghVirk/Automatic-Timetable-Generator-using-ML.git)
 - [ ] 121. automatic_timetable_generator_using_genetic_algorithm : [xcrema/automatic_timetable_generator_using_genetic_algorithm]( https://github.com/xcrema/automatic_timetable_generator_using_genetic_algorithm.git)
-- [ ] 122. : []( )
+- [ ] 122. Automatic_TimeTable : [AbhishekModthala/Automatic_TimeTable]( https://github.com/AbhishekModthala/Automatic_TimeTable.git)
 - [ ] 123. : []( )
 - [ ] 124. : []( )
 - [ ] 125. : []( )
