@@ -122,11 +122,11 @@
 - [ ] 121. automatic_timetable_generator_using_genetic_algorithm : [xcrema/automatic_timetable_generator_using_genetic_algorithm]( https://github.com/xcrema/automatic_timetable_generator_using_genetic_algorithm.git)
 - [ ] 122. Automatic_TimeTable : [AbhishekModthala/Automatic_TimeTable]( https://github.com/AbhishekModthala/Automatic_TimeTable.git)
 - [ ] 123. Teachers_automatic_timetable_generator: [rajupooja1211/Teachers_automatic_timetable_generator]( https://github.com/rajupooja1211/Teachers_automatic_timetable_generator.git)
-- [ ] 124. AUTOMATIC-TIMETABLE-GENERATOR: [Yug-Kunjadiya/AUTOMATIC-TIMETABLE-GENERATOR](https://github.com/Yug-Kunjadiya/AUTOMATIC-TIMETABLE-GENERATOR.git )
-- [ ] 125. Automatic-Timetable-Generator: [PathipatiTharun/Automatic-Timetable-Generator](https://github.com/PathipatiTharun/Automatic-Timetable-Generator.git )
-- [ ] 126. : []( )
-- [ ] 127. : []( )
-- [ ] 128. : []( )
-- [ ] 129. : []( )
+- [ ] 124. AUTOMATIC-TIMETABLE-GENERATOR : [Yug-Kunjadiya/AUTOMATIC-TIMETABLE-GENERATOR](https://github.com/Yug-Kunjadiya/AUTOMATIC-TIMETABLE-GENERATOR.git )
+- [ ] 125. Automatic-Timetable-Generator : [PathipatiTharun/Automatic-Timetable-Generator](https://github.com/PathipatiTharun/Automatic-Timetable-Generator.git )
+- [ ] 126. Automatic_Timetable_Generator : [muskan4015/Automatic_Timetable_Generator](https://github.com/muskan4015/Automatic_Timetable_Generator.git )
+- [ ] 127. Automatic-Timetable-Generator : [StefanIv21/Automatic-Timetable-Generator]( https://github.com/StefanIv21/Automatic-Timetable-Generator.git)
+- [ ] 128. automatic_timetable_generator : [dnaveenshankar/automatic_timetable_generator]( https://github.com/dnaveenshankar/automatic_timetable_generator.git)
+- [ ] 129. Automatic_Timetable_Generator : [piyushjaiswal76/Automatic_Timetable_Generator](https://github.com/piyushjaiswal76/Automatic_Timetable_Generator.git ) *try
 - [ ] 130. : []( )
 
