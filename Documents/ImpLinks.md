@@ -131,8 +131,8 @@
 - [ ] 130. automated-timetable-generator : [mlyoga/automated-timetable-generator](https://github.com/mlyoga/automated-timetable-generator.git ) google OR-tools
 - [ ] 131. TimeTable-ClashDetector-MERN-MySQL : [ItsMeAreebaAmjad/TimeTable-ClashDetector-MERN-MySQL]( https://github.com/ItsMeAreebaAmjad/TimeTable-ClashDetector-MERN-MySQL.git)
 - [ ] 132. TimeTableGeneratorWebApp: [RbkGh/TimeTableGeneratorWebApp]( https://github.com/RbkGh/TimeTableGeneratorWebApp.git)
-- [ ] 133. : []( )
-- [ ] 134. : []( )
+- [ ] 133. timetable-ortools : [khalilrached/timetable-ortools](https://github.com/khalilrached/timetable-ortools.git )
+- [ ] 134. Automatic-TimeTable-Generator : [khushboo-tolat/Automatic-TimeTable-Generator]( https://github.com/khushboo-tolat/Automatic-TimeTable-Generator.git)
 - [ ] 135. : []( )
 - [ ] 136. : []( )
 - [ ] 137. : []( )
