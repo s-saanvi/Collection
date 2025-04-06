@@ -1,22 +1,22 @@
 # Links Imp
 
-|Checks|Links|Comments|
-|---|---|---|
-| - [ ] | 1. College-Timetable-Generator : [nileshparab42/College-Timetable-Generator](https://github.com/nileshparab42/College-Timetable-Generator.git) ||
-| - [ ] | 2. timetable : [nihal1294/timetable](https://github.com/nihal1294/timetable.git) ||
-| - [ ] | 3. Time-table-management-system : [NamanDeept/Time-table-management-system](https://github.com/NamanDeept/Time-table-management-system.git ) ||
-| - [x] | 4. Timetable-Management-System : [Nav3005/Timetable-Management-System]( https://github.com/Nav3005/Timetable-Management-System.git) | needs to implement mysql |
-- [ ] 5. time-table-project : [robinsonvs/time-table-project](https://github.com/robinsonvs/time-table-project.git )
-- [ ] 6. TimeLord : [OhmGeek/TimeLord](https://github.com/OhmGeek/TimeLord.git )
-- [ ] 7. TimetableDesigner : [mateuszskoczek/TimetableDesigner](https://github.com/mateuszskoczek/TimetableDesigner.git )
-- [ ] 8. KDU_TTMS : [nadinCodeHat/KDU_TTMS](https://github.com/nadinCodeHat/KDU_TTMS.git )
-- [ ] 9. NureTimetable : [maxkoshevoi/NureTimetable](https://github.com/maxkoshevoi/NureTimetable.git )
-- [ ] 10. Timetable-Management-System : [msaqib4203/Timetable-Management-System](https://github.com/msaqib4203/Timetable-Management-System.git )
-- [ ] 11. Automatic-TimeTable-Generation-For-An-Institute : [ravi-kp/Automatic-TimeTable-Generation-For-An-Institute](https://github.com/ravi-kp/Automatic-TimeTable-Generation-For-An-Institute.git )
-- [ ] 12. time-table : [utkarsh-1905/time-table](https://github.com/utkarsh-1905/time-table.git )
-- [ ] 13. Php_Website_creation_project : [alicesophiya/Php_Website_creation_project](https://github.com/alicesophiya/Php_Website_creation_project.git )
-- [ ] 14. Timetable-Generator : [Ras-al-Ghul/Timetable-Generator](https://github.com/Ras-al-Ghul/Timetable-Generator.git )
-- [ ] 15. Time-Table : [Krishi1109/Time-Table](https://github.com/Krishi1109/Time-Table.git )
+|Checks &#9745; &#9744; &#9746; |Links|Comments|
+|:---:|---|---|
+| &#9745; | 1. College-Timetable-Generator : [nileshparab42/College-Timetable-Generator](https://github.com/nileshparab42/College-Timetable-Generator.git) |dont know how to run |
+| &#9746; | 2. timetable : [nihal1294/timetable](https://github.com/nihal1294/timetable.git) ||
+| &#9746; | 3. Time-table-management-system : [NamanDeept/Time-table-management-system](https://github.com/NamanDeept/Time-table-management-system.git ) ||
+| &#9745; | 4. Timetable-Management-System : [Nav3005/Timetable-Management-System]( https://github.com/Nav3005/Timetable-Management-System.git) | needs to implement mysql |
+| &#9746; | 5. time-table-project : [robinsonvs/time-table-project](https://github.com/robinsonvs/time-table-project.git ) ||
+| &#9746; | 6. TimeLord : [OhmGeek/TimeLord](https://github.com/OhmGeek/TimeLord.git ) || 
+| &#9746; | 7. TimetableDesigner : [mateuszskoczek/TimetableDesigner](https://github.com/mateuszskoczek/TimetableDesigner.git ) ||
+| &#9746; | 8. KDU_TTMS : [nadinCodeHat/KDU_TTMS](https://github.com/nadinCodeHat/KDU_TTMS.git ) ||
+| &#9746; | 9. NureTimetable : [maxkoshevoi/NureTimetable](https://github.com/maxkoshevoi/NureTimetable.git ) ||
+| &#9744; | 10. Timetable-Management-System : [msaqib4203/Timetable-Management-System](https://github.com/msaqib4203/Timetable-Management-System.git ) |its on xampp try on windows once|
+| &#9744; | 11. Automatic-TimeTable-Generation-For-An-Institute : [ravi-kp/Automatic-TimeTable-Generation-For-An-Institute](https://github.com/ravi-kp/Automatic-TimeTable-Generation-For-An-Institute.git ) |its on xampp try on windows once|
+| &#9744; | 12. time-table : [utkarsh-1905/time-table](https://github.com/utkarsh-1905/time-table.git ) |nees to have Go installed & not relatable |
+- [ ] 13. Php_Website_creation_project : [alicesophiya/Php_Website_creation_project](https://github.com/alicesophiya/Php_Website_creation_project.git ) ||
+- [ ] 14. Timetable-Generator : [Ras-al-Ghul/Timetable-Generator](https://github.com/Ras-al-Ghul/Timetable-Generator.git ) ||
+- [ ] 15. Time-Table : [Krishi1109/Time-Table](https://github.com/Krishi1109/Time-Table.git ) ||
 - [ ] 16. timetable-scheduler : [justEhmadSaeed/timetable-scheduler](https://github.com/justEhmadSaeed/timetable-scheduler.git )
 - [ ] 17. time-table : [utkarsh-1905/time-table](https://github.com/utkarsh-1905/time-table.git )
 - [ ] 18. College-ERP : [samarth-p/College-ERP](https://github.com/samarth-p/College-ERP.git )
@@ -54,7 +54,7 @@
 - [ ] 51. Timetabler-v2.0 : [ben-mathu/Timetabler-v2.0]( https://github.com/ben-mathu/Timetabler-v2.0.git)
 - [ ] 52. AutoTimeTable-Generator: [mutayyab01/AutoTimeTable-Generator](https://github.com/mutayyab01/AutoTimeTable-Generator.git )
 - [ ] 53. hust-timetable-scheduler: [king17pvp/hust-timetable-scheduler]( https://github.com/king17pvp/hust-timetable-scheduler.git)
-- [ ] 54. TimetableScheduler : [PROxZIMA/TimetableScheduler](https://github.com/PROxZIMA/TimetableScheduler.git )
+| &#9745; | 54. TimetableScheduler : [PROxZIMA/TimetableScheduler](https://github.com/PROxZIMA/TimetableScheduler.git ) |Same as 110 - no changes it runs but no correct logic|
 - [ ] 55. GA_SA_Hybrid_Comparison : [alzahraasalman/GA_SA_Hybrid_Comparison](https://github.com/alzahraasalman/GA_SA_Hybrid_Comparison.git )
 - [ ] 56. Hybrid-Genetic-Algorithm-Simulated-Annealing-for-Presentation-Scheduling : [rayjasson98/Hybrid-Genetic-Algorithm-Simulated-Annealing-for-Presentation-Scheduling](https://github.com/rayjasson98/Hybrid-Genetic-Algorithm-Simulated-Annealing-for-Presentation-Scheduling.git )
 - [ ] 57. TimetablingProblem : [camroga/TimetablingProblem](https://github.com/camroga/TimetablingProblem.git )
@@ -110,7 +110,7 @@
 - [ ] 107. shesettipavankumarswamy/timetablegenerator: [shesettipavankumarswamy/timetablegenerator](https://huggingface.co/spaces/shesettipavankumarswamy/timetablegenerator )
 - [ ] 108. Automatic_Timetable_Generator: [RSJK2562/Automatic_Timetable_Generator](https://github.com/RSJK2562/Automatic_Timetable_Generator.git )
 - [ ] 109. final-project.git: [parthjangam/final-project.git]( https://github.com/parthjangam/final-project.git)
-- [ ] 110. automatic-timetable-generator : [Deeksha11c/automatic-timetable-generator]( https://github.com/Deeksha11c/automatic-timetable-generator.git) -SAME- Timetable-Scheduler : [TromhiesGIG/Timetable-Scheduler](https://github.com/TromhiesGIG/Timetable-Scheduler.git)
+| &#9745; | 110. automatic-timetable-generator : [Deeksha11c/automatic-timetable-generator]( https://github.com/Deeksha11c/automatic-timetable-generator.git) -SAME- Timetable-Scheduler : [TromhiesGIG/Timetable-Scheduler](https://github.com/TromhiesGIG/Timetable-Scheduler.git) | this runs lacks logic |
 - [ ] 111. Automatic_Timetable_Generator: [YashChavanWeb/Automatic_Timetable_Generator]( https://github.com/YashChavanWeb/Automatic_Timetable_Generator.git)
 - [ ] 112. Automatic_TimeTable_Generator : [PARTH566DA/Automatic_TimeTable_Generator](https://github.com/PARTH566DA/Automatic_TimeTable_Generator.git )
 - [ ] 113. timetabler: [oluwatobimaxwell/timetabler]( https://github.com/oluwatobimaxwell/timetabler.git)
