@@ -136,9 +136,13 @@
 - [ ] 133. timetable-ortools : [khalilrached/timetable-ortools](https://github.com/khalilrached/timetable-ortools.git )
 - [ ] 134. Automatic-TimeTable-Generator : [khushboo-tolat/Automatic-TimeTable-Generator]( https://github.com/khushboo-tolat/Automatic-TimeTable-Generator.git)
 - [ ] 135. course-timetable-generator : [TP-O/course-timetable-generator]( https://github.com/TP-O/course-timetable-generator.git)
-- [ ] 136. : []( )
-- [ ] 137. : []( )
-- [ ] 138. : []( )
-- [ ] 139. : []( )
-- [ ] 140. : []( )
+| &#9745; | 136. TimeTable-Project-DC : [Arn0dian/TimeTable-Project-DC](https://github.com/Arn0dian/TimeTable-Project-DC.git ) |Works need to be tuned, not good for lab scheduling|
+- [ ] 137. ILP-Timetable-Maker : [vtfanta/ILP-Timetable-Maker]( https://github.com/vtfanta/ILP-Timetable-Maker.git)
+- [ ] 138. Goodwing-Timetabler: [Hu9o73/Goodwing-Timetabler]( https://github.com/Hu9o73/Goodwing-Timetabler.git)
+- [ ] 139. gen-schedule : [vinnik-dmitry07/gen-schedule](https://github.com/vinnik-dmitry07/gen-schedule.git )
+- [ ] 140. ClassGrid : [devclub-iitd/ClassGrid]( https://github.com/devclub-iitd/ClassGrid.git)
+- [ ] 141. TimeTable-Gen : [ahmed-BH/TimeTable-Gen]( https://github.com/ahmed-BH/TimeTable-Gen.git)
+- [ ] 142. evolutionary-timetable-scheduling: [Baksonator/evolutionary-timetable-scheduling]( https://github.com/Baksonator/evolutionary-timetable-scheduling.git)
+- [ ] 143. : []( )
+- [ ] 144. : []( )
 
