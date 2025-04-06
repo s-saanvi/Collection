@@ -133,7 +133,7 @@
 - [ ] 132. TimeTableGeneratorWebApp: [RbkGh/TimeTableGeneratorWebApp]( https://github.com/RbkGh/TimeTableGeneratorWebApp.git)
 - [ ] 133. timetable-ortools : [khalilrached/timetable-ortools](https://github.com/khalilrached/timetable-ortools.git )
 - [ ] 134. Automatic-TimeTable-Generator : [khushboo-tolat/Automatic-TimeTable-Generator]( https://github.com/khushboo-tolat/Automatic-TimeTable-Generator.git)
-- [ ] 135. : []( )
+- [ ] 135. course-timetable-generator : [TP-O/course-timetable-generator]( https://github.com/TP-O/course-timetable-generator.git)
 - [ ] 136. : []( )
 - [ ] 137. : []( )
 - [ ] 138. : []( )
