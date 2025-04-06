@@ -13,15 +13,15 @@
 | &#9746; | 9. NureTimetable : [maxkoshevoi/NureTimetable](https://github.com/maxkoshevoi/NureTimetable.git ) ||
 | &#9744; | 10. Timetable-Management-System : [msaqib4203/Timetable-Management-System](https://github.com/msaqib4203/Timetable-Management-System.git ) |its on xampp try on windows once|
 | &#9744; | 11. Automatic-TimeTable-Generation-For-An-Institute : [ravi-kp/Automatic-TimeTable-Generation-For-An-Institute](https://github.com/ravi-kp/Automatic-TimeTable-Generation-For-An-Institute.git ) |its on xampp try on windows once|
-| &#9744; | 12. time-table : [utkarsh-1905/time-table](https://github.com/utkarsh-1905/time-table.git ) |nees to have Go installed & not relatable |
-- [ ] 13. Php_Website_creation_project : [alicesophiya/Php_Website_creation_project](https://github.com/alicesophiya/Php_Website_creation_project.git ) ||
-- [ ] 14. Timetable-Generator : [Ras-al-Ghul/Timetable-Generator](https://github.com/Ras-al-Ghul/Timetable-Generator.git ) ||
-- [ ] 15. Time-Table : [Krishi1109/Time-Table](https://github.com/Krishi1109/Time-Table.git ) ||
-- [ ] 16. timetable-scheduler : [justEhmadSaeed/timetable-scheduler](https://github.com/justEhmadSaeed/timetable-scheduler.git )
-- [ ] 17. time-table : [utkarsh-1905/time-table](https://github.com/utkarsh-1905/time-table.git )
-- [ ] 18. College-ERP : [samarth-p/College-ERP](https://github.com/samarth-p/College-ERP.git )
-- [ ] 19. timetable_project : [prathameshfuke/timetable_project](https://github.com/prathameshfuke/timetable_project.git )
-- [ ] 20. College-Time-Table-Scheduler : [professorcode1/College-Time-Table-Scheduler](https://github.com/professorcode1/College-Time-Table-Scheduler.git )
+| &#9746; | 12. time-table : [utkarsh-1905/time-table](https://github.com/utkarsh-1905/time-table.git ) |nees to have Go installed & not reletable |
+| &#9746; | 13. Php_Website_creation_project : [alicesophiya/Php_Website_creation_project](https://github.com/alicesophiya/Php_Website_creation_project.git ) |its on xampp try on windows once|
+| &#9746; | 14. Timetable-Generator : [Ras-al-Ghul/Timetable-Generator](https://github.com/Ras-al-Ghul/Timetable-Generator.git ) |built on c and has errors & not reletable|
+| &#9746; | 15. Time-Table : [Krishi1109/Time-Table](https://github.com/Krishi1109/Time-Table.git ) |built on MERN no exact run commands |
+| &#9745; | 16. timetable-scheduler : [justEhmadSaeed/timetable-scheduler](https://github.com/justEhmadSaeed/timetable-scheduler.git ) |dont know how to run but available online|
+| &#9746; | 17. time-table : [utkarsh-1905/time-table](https://github.com/utkarsh-1905/time-table.git ) |copy of 12|
+| &#9746; | 18. College-ERP : [samarth-p/College-ERP](https://github.com/samarth-p/College-ERP.git ) |no correct user interaction pages|
+| &#9746; | 19. timetable_project : [prathameshfuke/timetable_project](https://github.com/prathameshfuke/timetable_project.git ) |there's something off in this repo|
+| &#9746; | 20. College-Time-Table-Scheduler : [professorcode1/College-Time-Table-Scheduler](https://github.com/professorcode1/College-Time-Table-Scheduler.git ) |there's something off in this repo|
 - [ ] 21. evolutionary-timetable-scheduling : [Baksonator/evolutionary-timetable-scheduling](https://github.com/Baksonator/evolutionary-timetable-scheduling.git )
 - [ ] 22. UiTM-Timetable-Generator : [afzafri/UiTM-Timetable-Generator](https://github.com/afzafri/UiTM-Timetable-Generator.git )
 - [ ] 23. Timetable-Generator : [kalidindiamitraja/Timetable-Generator](https://github.com/kalidindiamitraja/Timetable-Generator.git )
